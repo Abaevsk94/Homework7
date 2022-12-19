@@ -53,9 +53,10 @@ public class Main {
         System.out.println("Задача 4");
         int sum = 15_000;
         int month = 0;
+        double percent = 1.07;
         while (sum <= 12_000_000) {
             month++;
-            sum *= 1.07;
+            sum *= percent;
             System.out.printf("Месяц %d - накопил %d \n", month, sum);
         }
     }
@@ -63,8 +64,9 @@ public class Main {
     public static void task5() {
         System.out.println("Задача 5");
         int sum = 15_000;
+        double percent = 1.07;
         for (int i = 1; sum <= 12_000_000; i++) {
-            sum *= 1.07;
+            sum *= percent;
             if (i % 6 == 0) {
                 System.out.printf("Месяц %d - накопил %d \n", i, sum);
             }
@@ -74,9 +76,11 @@ public class Main {
     public static void task6() {
         System.out.println("Задача 6");
         int sum = 15_000;
-        for (int i = 1; i < 12 * 9; i += 6) {
+        double interestRate = 0.07;
+        int halfYear = 6;
+        for (int i = 1; i < 9 * 12; i += 6) {
             int sumBefore = sum;
-            sum *= 1 + 0.07 * 6;
+            sum *= 1 + interestRate * halfYear;
             System.out.printf("Месяц %d - накопил %d \n", i, sum - sumBefore);
         }
     }
